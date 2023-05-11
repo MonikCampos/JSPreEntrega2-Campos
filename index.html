@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./asset/img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,7 +26,7 @@
   <!--fin portada-->
   <main>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <a class="navbar-brand" href="#">Películas</a>
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-user"></i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,20 +43,26 @@
               <a class="dropdown-item text-light bg-dark" href="#drama">Drama</a>
               <a class="dropdown-item text-light bg-dark" href="#terror">Terror</a>
               <a class="dropdown-item text-light bg-dark" href="#terror">Suspenso</a>
-              <a class="dropdown-item text-light bg-dark" onclick="renderMoviesCuadricula(movies);">Todas las
+              <a class="dropdown-item text-light bg-dark" onclick="renderMovies(movies,1);">Todas las
                 películas</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#vista">Vista</a>
             <div class="dropdown-menu bg-dark">
-              <a class="dropdown-item text-light bg-dark" onclick="renderMoviesCuadricula(movies);">En cuadrícula</a>
-              <a class="dropdown-item text-light bg-dark" onclick="renderMoviesLista(movies);">En Lista</a>
+              <a class="dropdown-item text-light bg-dark" onclick="renderMovies(movies,1);">En cuadrícula</a>
+              <a class="dropdown-item text-light bg-dark" onclick="renderMovies(movies,0);">En Lista</a>
             </div>
           </li>
         </ul>
       </div>
     </nav>
+    <div class="container-fluid">
+      <div class="row" id="movies-views"></div>
+    </div>
+    <div class="container-fluid">
+      <div class="row" id="movies-filter"></div>
+    </div>
     <div class="container-fluid">
       <div class="row" id="movies-search"></div>
     </div>
