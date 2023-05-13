@@ -17,6 +17,14 @@
     src: url("../asset/fonts/EduNSWACTFoundation-VariableFont_wght.ttf");
 }
 
+
+/* Estilos generales */
+body {
+    font-family: "Edu";
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     font-family: "Bangers";
     font-size: 70px;
@@ -32,16 +40,19 @@ h2 {
     text-align: center;
 }
 h3 {
-    font-family: "Edu";
+    font-family: "Bangers";
     font-size: 20px;
     text-align: center;
+    text-transform: uppercase;
 }
 h4 {
+    font-family: "Edu";
+    font-size: 20px;
     text-align: center;
 }
 p {
     font-family: "Edu";
-    font-size: 20px;
+    font-size: 18px;
 }
 img {
     align-self: center;
@@ -70,6 +81,11 @@ button:hover {
 
 a {
     text-decoration: none;
+}
+
+a .btn {
+    display: flex;
+    justify-content: center;
 }
 
 nav a {
@@ -185,49 +201,9 @@ iframe {
     height: 550px;
 }
 
-.formBuscar {
-    display: flex;
-    justify-content: right;
-    align-items:flex-end;
-    color: white;
-    width: 100%;
-    background-color: gray;
-    padding: 5px;
-}
-
-.viewModes {
-    display: flex;
-    justify-content: right;
-    align-items:flex-end;
-    width: 100%;
-    background-color: gray;
-}
-
-.filters {
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
-    width: 100%;
-    background-color: gray;
-}
-
 .container-fluid .row .col-12 {
     padding: 0px;
 }
-
-
-
-
-
-/* a partir de aca chat */
-/* Estilos generales */
-body {
-    font-family: "Edu";
-    margin: 0;
-    padding: 0;
-}
-
-
 
 /* Formulario de búsqueda */
 .busqueda-form {
@@ -253,70 +229,10 @@ body {
     color: white;
 }
 
-.content-section {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 100px 0;
-    position: relative;
-    background-size: cover !important;
-    background-position: center;
-    overflow-x: hidden;
-}
-/* .category-thumb {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-} */
-
-figure {
-    margin: 0 0 1rem;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 40px;
-    margin-inline-end: 40px;
-}
-.category-thumb .category-content {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 15px 30px;
-    color: #fff;
-}
-.category-thumb .category-image {
-    width: 100%;
-    display: block;
-    margin-bottom: 1;
-    position: relative;
-    background: #111111;
-}
-.category-thumb .category-image:after {
-    content: "";
-    width: 100%;
-    height: 70%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
-    transition: all .35s ease-in-out;
-    opacity: 1;
-    background: black;
-    background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.0018382353) 0%, black 100%);
-    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.0018382353) 0%, black 100%);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0018382353) 0%, black 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
-}
-.movie-info-box .features {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 30px;
-    padding: 0;
+.card p {
+    align-self: center;
 }
 
+.card i {
+    align-self: center;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,21 +11,21 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="./css/style.css" />
-  <title>AppMovies</title>
+  <title>CINEMA</title>
 </head>
 
 <body>
-  <!--inicia portada-->
   <header>
     <div class="jumbotrom portada" id="goTop">
       <h1>Cinema</h1>
     </div>
   </header>
-  <!--fin portada-->
   <main>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <a class="navbar-brand" href="./pages/login.html"  data-toggle="popover" data-trigger="focus" title="Login" data-content="Ingresa con tu usuario para adquirir la entrada"><i class="fa-solid fa-user"></i></a>
+      <a class="navbar-brand" href="./pages/login.html" data-toggle="popover" data-trigger="focus" title="Login"
+        data-content="Ingresa con tu usuario para adquirir la entrada"><i class="fa-solid fa-user"></i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,45 +34,52 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#vista">Cartelera</a>
             <div class="dropdown-menu bg-dark">
-              <a class="dropdown-item text-light bg-dark" onclick="renderMovies(movies,1);">En
-                cuadrícula</a>
+              <a class="dropdown-item text-light bg-dark" onclick="renderMovies(movies,1);">En Cuadrícula</a>
               <a class="dropdown-item text-light bg-dark" onclick="renderMovies(movies,0);">En Lista</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#buscar">Buscar</a>
-            <div class="dropdown-menu bg-dark">
-              <a class="dropdown-item text-light bg-dark" href="#accion" onclick="searchMovies(movies, 'nombre');">Por Nombre</a>
-              <a class="dropdown-item text-light bg-dark" href="#comedia" onclick="searchMovies(movies, 'genero');">Por Género</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#filtros">Filtros</a>
-            <div class="dropdown-menu bg-dark">
-              <a class="dropdown-item text-light bg-dark" href="#accion">Acción</a>
-              <a class="dropdown-item text-light bg-dark" href="#comedia">Comedia</a>
-              <a class="dropdown-item text-light bg-dark" href="#drama">Drama</a>
-              <a class="dropdown-item text-light bg-dark" href="#terror">Terror</a>
-              <a class="dropdown-item text-light bg-dark" href="#terror">Suspenso</a>
-              <a class="dropdown-item text-light bg-dark" onclick="renderMovies(movies,1);">Todas las
-                películas</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#sinopsisBanner">Sinopsis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#movie-sinopsis">Sinopsis</a>
+            <a class="nav-link" href="./pages/entradas.html">Entradas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Entradas</a>
+            <a class="nav-link" href="./pages/contacto.html">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">Preguntas frecuentes</a>
+            <a class="nav-link" href="./pages/preguntas.html">Preguntas frecuentes</a>
           </li>
         </ul>
       </div>
     </nav>
+    <!-- Filtros -->
+    <div class="d-flex justify-content-center bg-secondary">
+      <div class="row">
+        <div class="col-12">
+          <h4><strong>Filtros</strong></h4>
+          <a class="btn btn-dark" href="#accion">Acción</a>
+          <a a class="btn btn-dark" href="#comedia">Comedia</a>
+          <a a class="btn btn-dark" href="#drama">Drama</a>
+          <a a class="btn btn-dark" href="#terror">Terror</a>
+          <a a class="btn btn-dark" href="#terror">Suspenso</a>
+          <a a class="btn btn-dark" onclick="renderMovies(movies,1);">Todas las películas</a>
+          <br>
+        </div>
+      </div>
+    </div>
+    <!-- Búsquedas por nombre  y por genero -->
+    <div class="d-flex justify-content-center bg-secondary">
+      <div class="row">
+        <div class="col-12">
+          <h4><strong>Buscar</strong></h4>
+          <a class="btn btn-dark" onclick="searchMovies(movies, 'nombre');">Por Nombre</a>
+          <a class="btn btn-dark" onclick="searchMovies(movies, 'genero');">Por Género</a>
+          <br>
+        </div>
+      </div>
+    </div>
+    <!-- Contenido -->
     <div class="container-fluid">
       <div class="row" id="movies-views"></div>
     </div>
@@ -87,7 +94,7 @@
       <!--Cartelera -->
       <div class="row" id="movies-list"></div>
     </div>
-    <div class="jumbotron sinopsis">
+    <div class="jumbotron sinopsis" id="sinopsisBanner">
       <h1>Sinopsis</h1>
     </div>
     <div class="container justify-content-center">

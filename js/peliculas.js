@@ -41,7 +41,7 @@ const movie20 = new Movie(20, "Super Mario Bros: la película", "Animación", 93
 
 const movies = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11, movie12, movie13, movie14, movie15, movie16, movie17, movie18, movie19, movie20];
 
-function renderMovies(movies, view) {
+function renderMovies(movies, view) { 
   moviesList.innerHTML = '';
   if (view === 0) { //LISTA
     movies.forEach(movie => {
@@ -53,7 +53,7 @@ function renderMovies(movies, view) {
           <div class="media-body">
           <h4>${movie.gender} - ${movie.qualification}</h4>
           <h2><strong>${movie.title}</strong></h2>
-          <a onclick="showMovie(${movie.id});" href="#sinopsis"><h3>Sinopsis <i class="fa-sharp fa-solid fa-circle-play"></i></h3></a>
+          <a onclick="showMovie(${movie.id});" href="#sinopsisBanner"><h3>Sinopsis <i class="fa-sharp fa-solid fa-circle-play"></i></h3></a>
           </div>
       </div>
       `;
@@ -72,7 +72,7 @@ function renderMovies(movies, view) {
         <div class="card-body">
           <h4>${movie.gender} - ${movie.qualification}</h4>
           <h2><strong>${movie.title}</strong></h2>
-          <a onclick="showMovie(${movie.id});" href="#sinopsis"><h3>Sinopsis <i class="fa-sharp fa-solid fa-circle-play"></i></h3></a>
+          <a onclick="showMovie(${movie.id});" href="#sinopsisBanner"><h3>Sinopsis <i class="fa-sharp fa-solid fa-circle-play"></i></h3></a>
         </div>
     `;
       moviesList.appendChild(contenedorMovie);
@@ -83,17 +83,14 @@ function renderMovies(movies, view) {
 function searchMovies(movies, criterio) {
   if (criterio === "nombre") { //busqueda por nombre
     let respuesta = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ");
-    let resultado = movies.filter((foundMovies) => foundMovies.title.includes(respuesta));
+    let resultado = movies.filter((movies) => movies.title.includes(respuesta));
+    console.log(`Peliculas que coinciden con la búsqueda: ${resultado.title}`);
   } else {
     let respuesta= prompt("Ingrese el nombre del género de película que quiere encontrar: ");
     let resultado = movies.filter((foundMovies) => foundMovies.gender.includes(respuesta));
-  }
-  if (resultado) {
     alert(`
-      Peliculas que coinciden con la búsqueda: ${resultado}
+      Peliculas que coinciden con la búsqueda: ${resultado.title}
       `);
-  } else {
-    alert(`No hubo coincidencias con la búsqueda`);
   }
 }
 
@@ -104,14 +101,14 @@ function showMovie(id) {
     return movie.id === id;
   })
   if (foundMovie) {
-    alert(`
-      DATOS PARA ACTUALIZAR SINOPSIS
-      Película: ${foundMovie.title}
-      Género: ${foundMovie.gender}
-      Calificación: ${foundMovie.qualification}
-      Minutos: ${foundMovie.minutes}
-      Descripción: ${foundMovie.description}
-      `);
+    // alert(`
+    //   DATOS PARA ACTUALIZAR SINOPSIS
+    //   Película: ${foundMovie.title}
+    //   Género: ${foundMovie.gender}
+    //   Calificación: ${foundMovie.qualification}
+    //   Minutos: ${foundMovie.minutes}
+    //   Descripción: ${foundMovie.description}
+    //   `);
     movieSinopsis.innerHTML = '';
     let contenedorMovie = document.createElement('div');
     contenedorMovie.classList.add('col-12');
@@ -128,7 +125,8 @@ function showMovie(id) {
           <strong>Origen: </strong>${foundMovie.origin}<br>
           <strong>Director:</strong>${foundMovie.director}<br></p>
           <p>${foundMovie.description}</p>
-          <button href="./pages/entradas.html">ENTRADAS</buttom>
+          <a class="btn btn-dark" href="../pages/entradas.html">COMPRAR ENTRADAS</a>
+          <a class="btn btn-dark" href="../index.html">VOLVER A CARTELERA</a>
         </div>
         <div class="card-footer">
         <iframe src="${foundMovie.video}" title="${foundMovie.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -144,6 +142,7 @@ $(document).ready(function () {
 });
 
 renderMovies(movies, 1);
+showMovie(1);
 // setupFilters(movies, filters);
 // setupViewModes(viewModes);
 // setupSearch(movies, searchInput);
