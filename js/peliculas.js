@@ -4,17 +4,17 @@ const moviesFilter = document.querySelector("#movies-filter");
 const movieSinopsis = document.querySelector("#movie-sinopsis");
 
 class Movie {
-  constructor (id, titulo, genero, minutos, origen, director, calificacion, imagen, descripcion, video) {
-  this.id = id;
-  this.title = titulo
-  this.gender = genero;
-  this.minutes = minutos;
-  this.origin = origen;
-  this.director = director;
-  this.qualification = calificacion;
-  this.image = imagen;
-  this.description = descripcion;
-  this.video = video;
+  constructor(id, titulo, genero, minutos, origen, director, calificacion, imagen, descripcion, video) {
+    this.id = id;
+    this.title = titulo
+    this.gender = genero;
+    this.minutes = minutos;
+    this.origin = origen;
+    this.director = director;
+    this.qualification = calificacion;
+    this.image = imagen;
+    this.description = descripcion;
+    this.video = video;
   }
 }
 
@@ -41,7 +41,7 @@ const movie20 = new Movie(20, "Super Mario Bros: la película", "Animación", 93
 
 const movies = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11, movie12, movie13, movie14, movie15, movie16, movie17, movie18, movie19, movie20];
 
-function renderMovies(movies, view) { 
+function renderMovies(movies, view) {
   moviesList.innerHTML = '';
   if (view === 0) { //LISTA
     movies.forEach(movie => {
@@ -80,20 +80,50 @@ function renderMovies(movies, view) {
   }
 }
 
-function searchMovies(movies, criterio) {
-  if (criterio === "nombre") { //busqueda por nombre
-    let respuesta = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ");
-    let resultado = movies.filter((movies) => movies.title.includes(respuesta));
-    console.log(`Peliculas que coinciden con la búsqueda: ${resultado.title}`);
+function searchMoviesName() {
+  //busqueda por nombre
+  let peliculaABuscar = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ");
+  let resultado = movies.filter((movie) => movie.title.includes(peliculaABuscar));
+  if (resultado) {
+    resultado.forEach((movie) => {
+      alert(movie.title + " - " + movie.gender + " - " + movie.qualification);
+    });
   } else {
-    let respuesta= prompt("Ingrese el nombre del género de película que quiere encontrar: ");
-    let resultado = movies.filter((foundMovies) => foundMovies.gender.includes(respuesta));
-    alert(`
-      Peliculas que coinciden con la búsqueda: ${resultado.title}
-      `);
+    console.log(movie);
+    alert("No se encontro la película");
   }
 }
 
+function searchMoviesGender() {
+  //busqueda por genero
+  let peliculaABuscar = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ");
+  let resultado = movies.filter((movie) => movie.title.includes(peliculaABuscar));
+  if (resultado) {
+    resultado.forEach((movie) => {
+      alert(movie.title + " - " + movie.gender + " - " + movie.qualification);
+    });
+  } else {
+    alert("No se encontro la película");
+  }
+}
+
+
+
+
+// function searchMoviesName() {
+//   //busqueda por nombre FUNCIONA
+//   let peliculaABuscar = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ");
+//   let resultado = movies.filter((movie) => {
+//     return movie.title === peliculaABuscar;
+//   })
+//   if (resultado) {
+//     resultado.forEach((movie) => {
+//       alert(movie.title + " - " + movie.gender + " - " + movie.qualification);
+//     });
+//   } else {
+//     alert("No se encontro la película");
+//   }
+// }
 
 
 function showMovie(id) {
