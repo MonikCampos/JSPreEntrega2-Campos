@@ -236,3 +236,10 @@ iframe {
 .card i {
     align-self: center;
 }
+
+.ticket {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 5px 0;
+}
