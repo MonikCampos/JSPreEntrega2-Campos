@@ -58,12 +58,14 @@
       <div class="row">
         <div class="col-12">
           <h4><strong>Filtros</strong></h4>
-          <a class="btn btn-dark" href="#accion">Acción</a>
-          <a a class="btn btn-dark" href="#comedia">Comedia</a>
-          <a a class="btn btn-dark" href="#drama">Drama</a>
-          <a a class="btn btn-dark" href="#terror">Terror</a>
-          <a a class="btn btn-dark" href="#terror">Suspenso</a>
-          <a a class="btn btn-dark" onclick="renderMovies(movies,1);">Todas las películas</a>
+          <a class="btn btn-dark" onclick="moviesFilter(1);">Acción</a>
+          <a a class="btn btn-dark" onclick="moviesFilter(2);">Comedia</a>
+          <a a class="btn btn-dark" onclick="moviesFilter(3);">Drama</a>
+          <a a class="btn btn-dark" onclick="moviesFilter(4);">Terror</a>
+          <a a class="btn btn-dark" onclick="moviesFilter(5);">Suspenso</a>
+          <a a class="btn btn-dark" onclick="moviesFilter(6);">Fantasía</a>
+          <a a class="btn btn-dark" onclick="moviesFilter(7);">Aventura</a>
+          <a a class="btn btn-dark" onclick="moviesFilter(8);"">Todas las películas</a>
           <br>
         </div>
       </div>
@@ -81,16 +83,6 @@
     </div>
     <!-- Contenido -->
     <div class="container-fluid">
-      <div class="row" id="movies-views"></div>
-    </div>
-    <div class="container-fluid">
-      <div class="row" id="movies-filter"></div>
-    </div>
-    <div class="container-fluid">
-      <!--Busqueda -->
-      <div class="row" id="movies-search"></div>
-    </div>
-    <div class="container-fluid">
       <!--Cartelera -->
       <div class="row" id="movies-list"></div>
     </div>
@@ -98,9 +90,11 @@
       <h1>Sinopsis</h1>
     </div>
     <div class="container justify-content-center">
+      <!--Sinopsis -->
       <div class="row" id="movie-sinopsis">
       </div>
     </div>
+    <!--fin Contenido -->
   </main>
 
   <!--inicio footer-->

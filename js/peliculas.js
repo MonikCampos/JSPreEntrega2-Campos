@@ -1,6 +1,4 @@
 const moviesList = document.querySelector("#movies-list");
-const moviesSearch = document.querySelector("#movies-search");
-const moviesFilter = document.querySelector("#movies-filter");
 const movieSinopsis = document.querySelector("#movie-sinopsis");
 
 class Movie {
@@ -23,7 +21,7 @@ const movie2 = new Movie(2, "Cuando ellas quieren más", "Comedia", 108, "USA", 
 const movie3 = new Movie(3, "Amor a primer mensaje", "Comedia romántica", 104, "USA", "Jim Strouse", "ATP", "./asset/img/amoraprimermensaje.jpg", "¿Qué pasaría si un mensaje de texto al azar te condujera al amor de tu vida? En esta comedia romántica, ante la pérdida de su prometido, Mira Ray envía una serie de mensajes de texto románticos a su antiguo número de teléfono... sin darse cuenta de que el número había sido reasignado al nuevo teléfono del trabajo de Rob Burns. Rob, periodista, queda cautivado por la honestidad de los textos. Cuando le asignan la tarea de escribir un perfil de la megaestrella Celine Dion (interpretándose a sí misma en su primer papel cinematográfico), le pide ayuda para averiguar cómo conocer a Mira en persona... y conquistar su corazón.", "https://www.youtube.com/embed/XC6ZnoGg3Rg");
 const movie4 = new Movie(4, "Cría Siniestra", "Terror", 91, "Finlandia", "Hanna Bergholm", "SAM16", "./asset/img/criasiniestra.jpg", "Una noche, Tinja encontrará un extraño huevo. En lugar de deshacerse de él, lo esconde y mantiene caliente, porque percibe vida dentro de él. Pero ni ella misma podría haber imaginado nunca lo que saldría del cascarón…", "https://www.youtube.com/embed/ox9jhbW8W7c");
 const movie5 = new Movie(5, "Último recurso", "Drama", 79, "Argentina", " Matías Szulanski", "SAM13", "./asset/img/ultimorecurso.jpg", "La llegada de un paquete a la redacción de una revista deportiva venida a menos dispara una investigación que indicaría que el primer Campeonato Mundial de Fútbol se jugó en 1926, lo ganó Argentina y por algún motivo se borró de la historia oficial. Laura y Julia se lanzan al enigma para descifrar qué sucedió realmente y con un poco de ridículo y diversión animar sus monótonas vidas.", "https://www.youtube.com/embed/04FpTLWNn8o");
-const movie6 = new Movie(6, " La Barbarie", "Drama", 90, "Argentina", " Andrew Sala", "SAM13", "./asset/img/labarbarie.jpg", "Nacho (18) huye de la violencia de su casa en Buenos Aires y busca un hogar al amparo de su padre, un estanciero a quien apenas conoce. La estancia viene sufriendo una amenaza: cada cierto tiempo una vaca aparece muerta, sin explicación. Para tratar de obtener la aprobación de su padre, Nacho buscará esclarecer estas muertes. Pero a medida que indague, irá descubriendo una gruesa capa de desconfianza y tensión de clase, que le harán preguntarse qué significa ser patrón.", "https://www.youtube.com/embed/_OYDluP89-8");
+const movie6 = new Movie(6, "La Barbarie", "Drama", 90, "Argentina", " Andrew Sala", "SAM13", "./asset/img/labarbarie.jpg", "Nacho (18) huye de la violencia de su casa en Buenos Aires y busca un hogar al amparo de su padre, un estanciero a quien apenas conoce. La estancia viene sufriendo una amenaza: cada cierto tiempo una vaca aparece muerta, sin explicación. Para tratar de obtener la aprobación de su padre, Nacho buscará esclarecer estas muertes. Pero a medida que indague, irá descubriendo una gruesa capa de desconfianza y tensión de clase, que le harán preguntarse qué significa ser patrón.", "https://www.youtube.com/embed/_OYDluP89-8");
 const movie7 = new Movie(7, "El triunfo", "Drama", 105, "Francia", "Emmanuel Courcol", "ATP", "./asset/img/eltriunfo.jpg", "Etienne (Kad Meran) es un entrañable actor que dirige un taller de teatro en un centro penitenciario. Allí reúne a un particular grupo de internos para representar la famosa obra de Samuel Beckett Esperando a Godot. Cuando consigue la autorización para realizar una gira fuera de la cárcel con su pintoresca troupe de actores, a Etienne se le presentará finalmente la ocasión de prosperar.", "https://www.youtube.com/embed/tjJryOoI35U");
 const movie8 = new Movie(8, "La sudestada", "Drama", 86, "Argentina", "Daniel Casabe", "SAM13", "./asset/img/lasudestada.jpg", "Jorge Villafañez es un veterano detective privado, cínico y meticuloso. Tiene la rara habilidad de hacer hablar a los extraños y es capaz de cualquier cosa con tal de resolver un caso. Pero cuando lo contratan para investigar a Elvira Schulz, una renombrada coreógrafa experimental, confunde la distancia entre observador y observado, y comienza a perder el olfato.", "https://www.youtube.com/embed/hxSzIJi35w4");
 const movie9 = new Movie(9, "Guardianes de la Galaxia Vol. 3", "Acción", 149, "USA", "James Gunnl", "SAM13", "./asset/img/guardianes.jpg", "En GUARDIANES DE LA GALAXIA VOL. 3 de Marvel Studios, la querida banda de Guardianes se instala en Knowhere. Pero sus vidas no tardan en verse alteradas por los ecos del turbulento pasado de Rocket. Peter Quill, aún conmocionado por la pérdida de Gamora, debe reunir a su equipo en una peligrosa misión para salvar la vida de Rocket, una misión que, si no se completa con éxito, podría muy posiblemente conducir al final de los Guardianes tal y como los conocemos.", "https://www.youtube.com/embed/qAkCoX760xQ");
@@ -37,13 +35,14 @@ const movie16 = new Movie(16, "El exorcista del Papa", "Terror", 103, "USA", "Ju
 const movie17 = new Movie(17, "Air: la historia detrás del logo", "Drama", 112, "USA", " Ben Affleck", "ATP", "./asset/img/air.jpg", "Del galardonado director Ben Affleck, AIR: La historia detrás del logo revela la increíble y revolucionaria asociación entre un entonces novato Michael Jordan y la incipiente división de basketball de Nike que revolucionó el mundo de los deportes y la cultura contemporánea con la marca Air Jordan. Esta conmovedora historia cuenta la apuesta que define la carrera de un equipo poco convencional que tenía todo en juego, la visión intransigente de una madre que conoce el valor del inmenso talento de su hijo y el fenómeno del basketball que se convertiría en la leyenda más grande de todos los tiempos.", "https://www.youtube.com/embed/ozZkWLa6itA");
 const movie18 = new Movie(18, "La extorsión", "Drama", 105, "Argentina", " Martino Zaidelis", "SAM13", "./asset/img/laextorsion.jpg", "Alejandro es un experimentado piloto aeronáutico. Amante de su profesión, esconde un secreto: una condición médica que implicaría su retiro inmediato. Los Servicios de Inteligencia lo descubren y muy pronto lo extorsionarán exigiéndole que transporte unas misteriosas valijas en la ruta Buenos Aires–Madrid sin hacer preguntas. Alerta por el enigmático cargamento que lleva, Alejandro se sumergirá en un universo de intriga y corrupción que lo pondrá en peligro a él y a los que ama mientras intenta escapar con vida a cualquier precio.", "https://www.youtube.com/embed/ZuM8r6L9RTI");
 const movie19 = new Movie(19, "John Wick 4", "Acción", 170, "USA", " Chad Stahelski", "SAM16", "./asset/img/jhonwick.jpg", "John Wick (Keanu Reeves) descubre un camino para derrotar a La Mesa. Pero antes de poder ganar su libertad, Wick deberá enfrentarse a un nuevo enemigo con poderosas alianzas en todo el mundo; y contra las fuerzas que convierten a viejos amigos en enemigos.", "https://www.youtube.com/embed/BNgEaNZPFCA");
-const movie20 = new Movie(20, "Super Mario Bros: la película", "Animación", 93, "USA", "Aaron Horvath", "ATP", "./asset/img/supermariobros.jpg", "De Nintendo e Illumination llega una nueva película animada basada en el mundo de Super Mario Bros. Dirigida por by Aaron Horvath y Michael Jelenic (colaboradores en Los Jóvenes Titanes en acción, Jóvenes Titanes en acción: la película) de un guion de Matthew Fogel (La gran aventura LEGO 2, Minions: Nace un villano), la película es protagonizada por Chris Pratt como Mario, Anya Taylor-Joy como la Princesa Peach, Charlie Day como Luigi, Jack Black como Bowser, Keegan-Michael Key como Toad, Seth Rogen como Donkey Kong, Fred Armisen como Cranky Kong, Kevin Michael Richardson como Kamek y Sebastian Maniscalco como Spike. La película es producida por el CEO y fundador de Illumination Chris Meledandri y por Shigeru Miyamoto de Nintendo. La película es co-financiada por Universal Pictures y Nintendo y estrenada mundialmente por Universal Pictures.", "https://www.youtube.com/embed/IaqvH0eaYsE");
+const movie20 = new Movie(20, "Super Mario Bros: la película", "Fantasía", 93, "USA", "Aaron Horvath", "ATP", "./asset/img/supermariobros.jpg", "De Nintendo e Illumination llega una nueva película animada basada en el mundo de Super Mario Bros. Dirigida por by Aaron Horvath y Michael Jelenic (colaboradores en Los Jóvenes Titanes en acción, Jóvenes Titanes en acción: la película) de un guion de Matthew Fogel (La gran aventura LEGO 2, Minions: Nace un villano), la película es protagonizada por Chris Pratt como Mario, Anya Taylor-Joy como la Princesa Peach, Charlie Day como Luigi, Jack Black como Bowser, Keegan-Michael Key como Toad, Seth Rogen como Donkey Kong, Fred Armisen como Cranky Kong, Kevin Michael Richardson como Kamek y Sebastian Maniscalco como Spike. La película es producida por el CEO y fundador de Illumination Chris Meledandri y por Shigeru Miyamoto de Nintendo. La película es co-financiada por Universal Pictures y Nintendo y estrenada mundialmente por Universal Pictures.", "https://www.youtube.com/embed/IaqvH0eaYsE");
 
 const movies = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10, movie11, movie12, movie13, movie14, movie15, movie16, movie17, movie18, movie19, movie20];
 
+//función de las vistas de películas
 function renderMovies(movies, view) {
   moviesList.innerHTML = '';
-  if (view === 0) { //LISTA
+  if (view === 0) { //0-LISTA
     movies.forEach(movie => {
       let contenedorMovie = document.createElement('div');
       contenedorMovie.classList.add('col-12');
@@ -60,7 +59,7 @@ function renderMovies(movies, view) {
       contenedorMovie.innerHTML = contenedorMovie.innerHTML + `</table><hr>`;
       moviesList.appendChild(contenedorMovie);
     });
-  } else { //CUADRICULA
+  } else { //1-CUADRICULA
     movies.forEach(movie => {
       let contenedorMovie = document.createElement('div');
       contenedorMovie.classList.add('col-sm-12');
@@ -79,53 +78,140 @@ function renderMovies(movies, view) {
     });
   }
 }
+//funciones de filtros de películas
+function moviesFilter(filter) {
+  switch (filter) {
+    case 1:
+      MoviesFilterAccion();
+      break
+    case 2:
+      MoviesFilterComedy();
+      break
+    case 3:
+      MoviesFilterDrama();
+      break
+    case 4:
+      MoviesFilterHorror();
+      break
+    case 5:
+      MoviesFilterThriller();
+      break
+    case 6:
+      MoviesFilterFantacy();
+      break
+    case 7:
+      MoviesFilterAventure();
+      break
+    case 8:
+      MoviesFilterAccion();
+      MoviesFilterComedy();
+      MoviesFilterDrama();
+      MoviesFilterHorror();
+      MoviesFilterThriller();
+      MoviesFilterFantacy();
+      MoviesFilterAventure();
+      break
+    default:
+      alert("No es una opción válida");
+      break
+  }
+}
 
+function MoviesFilterAccion() {
+  let genero = "ACCIÓN";
+  resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
+  let msg = "Género: " + genero + "\n";
+  resultado.forEach((movie) => {
+    msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
+  });
+  alert(msg);
+}
+function MoviesFilterComedy() {
+  let genero = "COMEDIA";
+  resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
+  let msg = "Género: " + genero + "\n";
+  resultado.forEach((movie) => {
+    msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
+  });
+  alert(msg);
+}
+function MoviesFilterDrama() {
+  let genero = "DRAMA";
+  resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
+  let msg = "Género: " + genero + "\n";
+  resultado.forEach((movie) => {
+    msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
+  });
+  alert(msg);
+}
+function MoviesFilterHorror() {
+  let genero = "TERROR";
+  resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
+  let msg = "Género: " + genero + "\n";
+  resultado.forEach((movie) => {
+    msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
+  });
+  alert(msg);
+}
+function MoviesFilterThriller() {
+  let genero = "SUSPENSO";
+  resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
+  let msg = "Género: " + genero + "\n";
+  resultado.forEach((movie) => {
+    msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
+  });
+  alert(msg);
+}
+function MoviesFilterFantacy() {
+  let genero = "FANTASÍA";
+  resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
+  let msg = "Género: " + genero + "\n";
+  resultado.forEach((movie) => {
+    msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
+  });
+  alert(msg);
+}
+function MoviesFilterAventure() {
+  let genero = "AVENTURA";
+  resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
+  let msg = "Género: " + genero + "\n";
+  resultado.forEach((movie) => {
+    msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
+  });
+  alert(msg);
+}
+
+//funciones de búsquedas de películas
 function searchMoviesName() {
   //busqueda por nombre
-  let peliculaABuscar = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ");
-  let resultado = movies.filter((movie) => movie.title.includes(peliculaABuscar));
-  if (resultado) {
+  let peliculaABuscar = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ").toUpperCase();
+  let resultado = movies.filter((movie) => movie.title.toUpperCase().includes(peliculaABuscar));
+  if (resultado.length != 0) {
+    let msg = "Películas que coinciden con la búsqueda: " + peliculaABuscar + "\n";
     resultado.forEach((movie) => {
-      alert(movie.title + " - " + movie.gender + " - " + movie.qualification);
+      msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
     });
+    alert(msg);
   } else {
-    console.log(movie);
-    alert("No se encontro la película");
+    alert("No se encontro la película que coincida con: " + peliculaABuscar);
   }
 }
 
 function searchMoviesGender() {
   //busqueda por genero
-  let peliculaABuscar = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ");
-  let resultado = movies.filter((movie) => movie.title.includes(peliculaABuscar));
-  if (resultado) {
+  let peliculaABuscar = prompt("Ingrese el nombre del género cinematográfico que quiere encontrar: ").toUpperCase();
+  let resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(peliculaABuscar));
+  if (resultado.length != 0) {
+    let msg = "Géneros que coinciden con la búsqueda: " + peliculaABuscar + "\n";
     resultado.forEach((movie) => {
-      alert(movie.title + " - " + movie.gender + " - " + movie.qualification);
+      msg = msg + " -" + movie.title + " - " + movie.gender + " - " + movie.qualification + "\n";
     });
+    alert(msg);
   } else {
-    alert("No se encontro la película");
+    alert("No se encontró ningún género que coincida." + peliculaABuscar);
   }
 }
-
-
-
-
-// function searchMoviesName() {
-//   //busqueda por nombre FUNCIONA
-//   let peliculaABuscar = prompt("Ingrese el nombre de la pelicula que quiere encontrar: ");
-//   let resultado = movies.filter((movie) => {
-//     return movie.title === peliculaABuscar;
-//   })
-//   if (resultado) {
-//     resultado.forEach((movie) => {
-//       alert(movie.title + " - " + movie.gender + " - " + movie.qualification);
-//     });
-//   } else {
-//     alert("No se encontro la película");
-//   }
-// }
-
-
+//función que muestra la sinopsis de cada película
 function showMovie(id) {
   let foundMovie = movies.find((movie) => {
     return movie.id === id;
@@ -155,8 +241,8 @@ function showMovie(id) {
           <strong>Origen: </strong>${foundMovie.origin}<br>
           <strong>Director:</strong>${foundMovie.director}<br></p>
           <p>${foundMovie.description}</p>
-          <a class="btn btn-dark" href="../pages/entradas.html">COMPRAR ENTRADAS</a>
-          <a class="btn btn-dark" href="../index.html">VOLVER A CARTELERA</a>
+          <a class="btn btn-dark" href="./pages/entradas.html">COMPRAR ENTRADAS</a>
+          <a class="btn btn-dark" href="./index.html">VOLVER A CARTELERA</a>
         </div>
         <div class="card-footer">
         <iframe src="${foundMovie.video}" title="${foundMovie.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -167,13 +253,11 @@ function showMovie(id) {
   }
 }
 
+//popover de login
 $(document).ready(function () {
   $('[data-toggle="popover"]').popover();
 });
 
+//llamadas a funciones iniciales
 renderMovies(movies, 1);
 showMovie(1);
-// setupFilters(movies, filters);
-// setupViewModes(viewModes);
-// setupSearch(movies, searchInput);
-// setupEvents(movies);
