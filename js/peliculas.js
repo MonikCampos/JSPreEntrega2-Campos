@@ -47,7 +47,7 @@ function renderMovies(movies, view) {
       let contenedorMovie = document.createElement('div');
       contenedorMovie.classList.add('col-12');
       contenedorMovie.innerHTML = `
-      <div class="media border p-3">
+      <div class="media p-3">
         <img src="${movie.image}" alt="${movie.title}" class="mr-3 mt-3">
           <div class="media-body">
           <h4>${movie.gender} - ${movie.qualification}</h4>
@@ -126,6 +126,7 @@ function MoviesFilterAccion() {
   });
   alert(msg);
 }
+
 function MoviesFilterComedy() {
   let genero = "COMEDIA";
   resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
@@ -135,6 +136,7 @@ function MoviesFilterComedy() {
   });
   alert(msg);
 }
+
 function MoviesFilterDrama() {
   let genero = "DRAMA";
   resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
@@ -144,6 +146,7 @@ function MoviesFilterDrama() {
   });
   alert(msg);
 }
+
 function MoviesFilterHorror() {
   let genero = "TERROR";
   resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
@@ -153,6 +156,7 @@ function MoviesFilterHorror() {
   });
   alert(msg);
 }
+
 function MoviesFilterThriller() {
   let genero = "SUSPENSO";
   resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
@@ -162,6 +166,7 @@ function MoviesFilterThriller() {
   });
   alert(msg);
 }
+
 function MoviesFilterFantacy() {
   let genero = "FANTASÍA";
   resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
@@ -171,6 +176,7 @@ function MoviesFilterFantacy() {
   });
   alert(msg);
 }
+
 function MoviesFilterAventure() {
   let genero = "AVENTURA";
   resultado = movies.filter((movie) => movie.gender.toUpperCase().includes(genero));
@@ -241,12 +247,12 @@ function showMovie(id) {
           <strong>Origen: </strong>${foundMovie.origin}<br>
           <strong>Director:</strong>${foundMovie.director}<br></p>
           <p>${foundMovie.description}</p>
+        </div>
+        <div class="card-footer">
           <a class="btn btn-dark" href="./pages/entradas.html">COMPRAR ENTRADAS</a>
           <a class="btn btn-dark" href="./index.html">VOLVER A CARTELERA</a>
         </div>
-        <div class="card-footer">
-        <iframe src="${foundMovie.video}" title="${foundMovie.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+          <iframe src="${foundMovie.video}" title="${foundMovie.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       `;
     movieSinopsis.appendChild(contenedorMovie);
